@@ -18,7 +18,6 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
 }
 
@@ -26,4 +25,8 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 32px;
+}
+
+button {
+  cursor: pointer;
 }
