@@ -2,7 +2,7 @@ import axios, { type AxiosRequestConfig } from "axios"
 
 export function CustomInstance<T>(config: AxiosRequestConfig) {
   const instance = axios.create({
-    baseURL: "https://jsonplaceholder.typicode.com",
+    baseURL: "http://localhost:3000",
     headers: {
       "Content-Type": "application/json",
     },
