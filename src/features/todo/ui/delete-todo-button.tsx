@@ -12,8 +12,13 @@ export default function DeleteTodoButton(todo: Todo) {
   })
   return (
     <button
+      disabled={mutation.isPending}
       onClick={() => mutation.mutate()}
-      className="px-8 bg-neutral-700 hover:bg-indigo-500 transition-colors"
+      className={`px-8 transition-colors ${
+        mutation.isPending
+          ? "bg-neutral-700 hover:bg-neutral-700 !cursor-progress"
+          : "bg-neutral-700 hover:bg-indigo-500"
+      }`}
     >
       Delete
     </button>

@@ -32,8 +32,13 @@ export function NewTodoForm() {
           className="border-2 w-full border-neutral-700 p-4 focus:border-indigo-500 outline-none"
         />
         <button
+          disabled={mutation.isPending}
           type="submit"
-          className="px-8 bg-neutral-700 hover:bg-indigo-500 transition-colors"
+          className={`px-8 text-white transition-colors ${
+            mutation.isPending
+              ? "bg-neutral-700 hover:bg-neutral-700 !cursor-progress"
+              : "bg-neutral-700 hover:bg-indigo-500"
+          }`}
         >
           Add
         </button>
