@@ -1,4 +1,4 @@
-import { CustomInstance } from "../../../shared/api/axios-instance"
+import { CustomInstance } from "./axios-instance"
 import type { Todo } from "../model/Todo"
 
 export async function DeleteTodo(id: string) {

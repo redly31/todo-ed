@@ -1,26 +1,23 @@
-import { useQueryClient, useMutation } from "@tanstack/react-query"
-import type { Todo } from "../model/Todo"
-import { DeleteTodo } from "../api/delete-todo"
+type DeleteTodoButtonProps = {
+  onClick: () => void
+  isPending: boolean
+}
 
-export default function DeleteTodoButton(todo: Todo) {
-  const queryClient = useQueryClient()
-  const mutation = useMutation({
-    mutationFn: () => DeleteTodo(todo.id),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["todos"] })
-    },
-  })
+export default function DeleteTodoButton({
+  onClick,
+  isPending,
+}: DeleteTodoButtonProps) {
   return (
     <button
-      disabled={mutation.isPending}
-      onClick={() => mutation.mutate()}
+      disabled={isPending}
+      onClick={onClick}
       className={`px-8 transition-colors ${
-        mutation.isPending
+        isPending
           ? "bg-neutral-700 hover:bg-neutral-700 !cursor-progress"
           : "bg-neutral-700 hover:bg-indigo-500"
       }`}
     >
-      Delete
+      {isPending ? "Deleting..." : "Delete"}
     </button>
   )
 }

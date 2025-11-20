@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import type { Todo } from "../model/Todo"
+import type { Todo } from "../../../shared/model/Todo"
 
 type TodoItemProps = {
   todo: Todo
